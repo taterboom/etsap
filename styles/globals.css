@@ -24,3 +24,24 @@ a {
     background: black;
   }
 }
+
+code {
+  white-space: pre-wrap;
+}
+
+.toast {
+  position: fixed;
+  top: 1rem;
+  right: 1rem;
+  padding: 0.25rem 0.8rem;
+  border-radius: 0.25rem;
+  background-color: rgba(255,255,255,.1);
+  backdrop-filter: blur(12px);
+  font-size: 0.9rem;
+  transition: opacity 0.2s;
+  opacity: 0;
+}
+
+.toast.active {
+  opacity: 1;
+}
