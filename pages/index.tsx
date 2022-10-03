@@ -113,7 +113,7 @@ const Home: NextPage = () => {
       </main>
 
       <footer className={styles.footer}>
-        <a href="https://www.github.com/xue1206" target="_blank" rel="noreferrer">
+        <a href="https://www.github.com/taterboom" target="_blank" rel="noreferrer">
           <IconMdiGithub />
         </a>
       </footer>
