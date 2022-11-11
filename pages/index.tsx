@@ -34,8 +34,8 @@ const App = () => {
         setToastMessage("Fail: " + err.message)
       })
   })
-  const onCopy = () => {
-    window.navigator.clipboard.writeText(data.text).then(() => {
+  const onCopy = (text: string) => {
+    window.navigator.clipboard.writeText(text).then(() => {
       setToastMessage("Copied!")
     })
   }
@@ -64,6 +64,7 @@ const App = () => {
   if (!data) return <div>Loading...</div>
   return (
     <>
+      <div className={`toast ${toastMessage ? "active" : ""}`}>{toastMessage}</div>
       <button
         className={styles.action}
         onClick={() => {
@@ -72,11 +73,19 @@ const App = () => {
       >
         paste
       </button>
-      <code onClick={() => onCopy()}>{data.text}</code>
-      <button className={styles.action} onClick={() => onCopy()}>
-        copy
-      </button>
-      <div className={`toast ${toastMessage ? "active" : ""}`}>{toastMessage}</div>
+      <ul>
+        {data.texts.map((item: string) => (
+          <li key={Date.now()}>
+            <code
+              onClick={() => {
+                onCopy(item)
+              }}
+            >
+              {item}
+            </code>
+          </li>
+        ))}
+      </ul>
     </>
   )
 }

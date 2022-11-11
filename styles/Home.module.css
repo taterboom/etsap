@@ -6,10 +6,10 @@
   min-height: calc(100vh - 40px);
   padding: 2rem 0;
   flex: 1;
-  display: flex;
+  /* display: flex;
   flex-direction: column;
   justify-content: center;
-  align-items: center;
+  align-items: center; */
 }
 
 .footer {
@@ -131,5 +131,6 @@
 }
 
 .action {
-  margin: 1rem
+  margin: 1rem;
+  padding: 0.2rem 0.6rem;
 }
