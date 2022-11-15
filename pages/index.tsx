@@ -60,6 +60,7 @@ const App = () => {
       }
     }
   }, [toastMessage])
+
   if (error) return <div>{error.message}</div>
   if (!data) return <div>Loading...</div>
   return (
@@ -74,8 +75,8 @@ const App = () => {
         paste
       </button>
       <ul>
-        {data.texts.map((item: string) => (
-          <li key={Date.now()}>
+        {data.texts.map((item: string, index: number) => (
+          <li key={index + item}>
             <code
               onClick={() => {
                 onCopy(item)
